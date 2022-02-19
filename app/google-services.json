@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "622102816839",
+    "firebase_url": "https://allonone-d94dc-default-rtdb.firebaseio.com",
+    "project_id": "allonone-d94dc",
+    "storage_bucket": "allonone-d94dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622102816839:android:ba50b5202c8de17bcc6962",
+        "android_client_info": {
+          "package_name": "com.example.allonone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622102816839-ik1oocrr8osc82hd0lqjoiji43j7rj5m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6BEv8SFYzihL0slqKGSAKdcna9hONurA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622102816839-ik1oocrr8osc82hd0lqjoiji43j7rj5m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
