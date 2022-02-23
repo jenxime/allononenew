@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllOnOne">
         <activity
+            android:name=".PerfilVendedor"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperacionV"
+            android:exported="false" />
+        <activity
             android:name=".IngresarV"
             android:exported="false" />
         <activity

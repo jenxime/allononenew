@@ -21,7 +21,6 @@ class Registrese : AppCompatActivity() {
     private lateinit var txtEmailr: EditText
     private lateinit var txtPasswordr: EditText
     private lateinit var txtNamer: EditText
-    private lateinit var txtTypeUserr: EditText
     private lateinit var progressBar: ProgressBar
     private lateinit var dbReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
@@ -45,7 +44,7 @@ class Registrese : AppCompatActivity() {
         txtEmailr = findViewById(R.id.txtEmailr)
         txtPasswordr = findViewById(R.id.txtPasswordr)
         txtNamer = findViewById(R.id.txtNamer)
-        txtTypeUserr = findViewById(R.id.txtTypeUserr)
+
 
         progressBar = ProgressBar(this)
         database = FirebaseDatabase.getInstance()
@@ -66,9 +65,9 @@ class Registrese : AppCompatActivity() {
         val email: String = txtEmailr.text.toString()
         val password: String = txtPasswordr.text.toString()
         val name: String = txtNamer.text.toString()
-        val typeUser: String = txtTypeUserr.text.toString()
 
-        if (txtEmailr.text.isNotEmpty() && txtPasswordr.text.isNotEmpty() && txtNamer.text.isNotEmpty() && txtTypeUserr.text.isNotEmpty()) {
+
+        if (txtEmailr.text.isNotEmpty() && txtPasswordr.text.isNotEmpty() && txtNamer.text.isNotEmpty() ) {
             progressBar.visibility = View.VISIBLE
             FirebaseAuth.getInstance()
                 .createUserWithEmailAndPassword(email, password)
@@ -84,7 +83,7 @@ class Registrese : AppCompatActivity() {
                         userBD.child("Email").setValue(txtEmailr.text.toString())
                         userBD.child("password").setValue(password)
                         userBD.child("name").setValue(name)
-                        userBD.child("typeUser").setValue(typeUser)
+
                         action()
                     } else {
                         Toast.makeText(this, "Registro Incorrecto", Toast.LENGTH_SHORT).show()

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Recuperacion">
+    tools:context=".RecuperacionV">
 
     <TextView
         android:id="@+id/textView1"
@@ -48,16 +48,15 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:onClick="recuperarI"
+        android:onClick="recuperarV"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         android:text="Enviar" />
 
-
     <Button
-        android:id="@+id/btnAtras"
+        android:id="@+id/btnAtrasV"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -65,5 +64,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="Atras"
         android:textColor="@android:color/darker_gray"
- />
+        />
+
+
 </LinearLayout>

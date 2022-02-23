@@ -11,7 +11,7 @@
         android:id="@+id/textView15"
         android:layout_width="282dp"
         android:layout_height="65dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="36dp"
         android:text="Registrese"
         android:textAlignment="center"
@@ -24,62 +24,118 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
+        android:layout_width="76dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="40dp"
+        android:text="Email:"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Email:" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="337dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/emailRv"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:text="Password:"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Password:" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="337dp"
+        android:id="@+id/passwordRv"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="202dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:text="Nombre del negocio:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/nameRv"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:text="Descripción:"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Descripción:" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="335dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/descripcionRv"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:text="Contacto:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/contactoRv"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:onClick="registrarV"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:text="SIGNUP" />
+
+    <Button
+        android:onClick="btnIngresarV"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Si tienes cuenta ingresa ya"
+        android:textColor="@android:color/darker_gray" />
+
 
 </LinearLayout>
