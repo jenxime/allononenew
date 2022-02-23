@@ -12,8 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        btnIngresa.setOnClickListener {
+        btnCliente.setOnClickListener {
             val intent:Intent = Intent (this, Ingresar::class.java )
+            startActivity(intent)
+            finish()
+        }
+
+        btnVendedor.setOnClickListener {
+            val intent:Intent = Intent (this, IngresarV::class.java )
             startActivity(intent)
             finish()
         }
