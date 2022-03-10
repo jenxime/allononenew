@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="81dp"
+        android:fontFamily="@font/bungee"
         android:text="ALL ON ONE"
         android:textAlignment="center"
-        android:textColor="@color/azul_500"
-        android:textSize="48sp"
-         />
+        android:textColor="@color/colorSecondaryVariant"
+        android:textSize="48sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="281dp"
-        android:layout_marginBottom="4dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="4dp"
         app:srcCompat="@drawable/logo" />
 
     <Button
@@ -32,7 +32,9 @@
         android:layout_height="76dp"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="40dp"
-        android:text="Cliente" />
+        android:fontFamily="@font/breadley"
+        android:text="Cliente"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnVendedor"
@@ -40,6 +42,8 @@
         android:layout_height="69dp"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="24dp"
-        android:text="Vendedor" />
+        android:fontFamily="@font/breadley"
+        android:text="Vendedor"
+        android:textSize="20sp" />
 
 </LinearLayout>

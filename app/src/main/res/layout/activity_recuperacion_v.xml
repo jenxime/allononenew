@@ -15,7 +15,7 @@
         android:layout_marginTop="36dp"
         android:text="Recuperar la contraseña"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="36sp" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="35dp"
         android:text="Ingrese su correo electronico y se enviara al correo un link para restaurar la contraseña."
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <TextView
@@ -35,11 +35,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="35dp"
         android:text="Email:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailRv"
+        android:id="@+id/emailRi"
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:layout_marginLeft="40dp"

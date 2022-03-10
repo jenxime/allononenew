@@ -15,19 +15,18 @@
         android:layout_marginTop="36dp"
         android:text="Registrese"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="48sp"
-         />
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="48sp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Email:" />
+        android:layout_marginTop="35dp"
+        android:text="Email:"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtEmailr"
@@ -43,11 +42,11 @@
         android:id="@+id/textView7"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Password:" />
+        android:layout_marginTop="35dp"
+        android:text="Password:"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtPasswordr"
@@ -62,11 +61,11 @@
         android:id="@+id/textView8"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Full Name:" />
+        android:layout_marginTop="35dp"
+        android:text="Full Name:"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtNamer"

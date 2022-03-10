@@ -15,7 +15,7 @@
         android:layout_marginTop="36dp"
         android:text="Registrese"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.458"
@@ -29,11 +29,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="35dp"
         android:text="Email:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailRv"
+        android:id="@+id/emailRi"
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:layout_marginLeft="40dp"
@@ -48,7 +48,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="18dp"
         android:text="Password:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
@@ -67,7 +67,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="18dp"
         android:text="Nombre del negocio:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
@@ -86,7 +86,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="18dp"
         android:text="Descripción:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
@@ -106,7 +106,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="18dp"
         android:text="Contacto:"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
 

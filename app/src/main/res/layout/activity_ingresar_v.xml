@@ -17,28 +17,26 @@
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bungee"
         android:text="Ingresar"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
     <TextView
         android:id="@+id/textView16"
-        android:text="Email:"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        />
+        android:layout_marginTop="35dp"
+        android:text="Email:"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/emailIv"
@@ -52,14 +50,13 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:text="Password:"
         android:layout_width="116dp"
         android:layout_height="36dp"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-      />
+        android:layout_marginTop="35dp"
+        android:text="Password:"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/passwordIv"
@@ -70,6 +67,19 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/Cuadro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
     <Button
         android:id="@+id/button3"
