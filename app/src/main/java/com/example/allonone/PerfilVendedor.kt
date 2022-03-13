@@ -1,93 +1,103 @@
 package com.example.allonone
 
 import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.TextView
+import android.text.TextUtils
+import android.widget.Button
 import com.example.allonone.databinding.ActivityPerfilVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
-
-import com.google.firebase.ktx.Firebase
+import android.widget.EditText
+import android.widget.ImageView
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.activity_registrese_v.*
+
 
 class PerfilVendedor : AppCompatActivity() {
 
-    private lateinit var name: TextView
-    private lateinit var auth: FirebaseAuth
-    private lateinit var binding : ActivityPerfilVendedorBinding
-    private lateinit var dbReference: DatabaseReference
-    private lateinit var storageReference: StorageReference
-    private lateinit var dialog: Dialog
-    private lateinit var uid : String
-    private lateinit var ingresarV: IngresarV
-    private lateinit var registreseV: RegistreseV
-
-
+    private lateinit var nombre : EditText
+    private lateinit var descripcion: EditText
+    private lateinit var contacto : EditText
+    private lateinit var foto : ImageView
+    private lateinit var actualizar : Button
+    private lateinit var dbDatabase: DatabaseReference
+    private lateinit var auth : FirebaseAuth
+    private lateinit var progressbar: ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_perfil_vendedor)
-        binding = ActivityPerfilVendedorBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_perfil_vendedor)
+
+        nombre = findViewById(R.id.nameP)
+        descripcion = findViewById(R.id.descripcionP)
+        contacto = findViewById(R.id.contactoP)
+        foto = findViewById(R.id.img)
+        actualizar = findViewById(R.id.btnUpdate)
+        progressbar = ProgressDialog(this)
 
         auth = FirebaseAuth.getInstance()
-        uid = auth.currentUser?.uid.toString()
+        val uid = auth.currentUser?.uid!!
 
-        dbReference = FirebaseDatabase.getInstance().getReference("Seller")
-        if (uid.isNotEmpty()) {
-            getUserData()
+        dbDatabase = FirebaseDatabase.getInstance().getReference("Seller").child(uid)
+
+        actualizar.setOnClickListener {
+            val nomb = nombre.text.toString().trim()
+            val des = descripcion.text.toString().trim()
+            val cont = contacto.text.toString().trim()
+
+            if(TextUtils.isEmpty(nomb)){
+                nombre.error = "Enter name"
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(des)){
+                descripcion.error = "Enter descripcion"
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(cont)){
+                contacto.error = "Enter contacto"
+                return@setOnClickListener
+            }
+
+            updateUser(nomb, des, cont)
+
         }
 
     }
-    private fun getUserData(){
-        dbReference.child(uid).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                registreseV = snapshot.getValue(RegistreseV::class.java)!!
-                //binding.nameP. .setText(registreseV.nameRv )
-                //binding.descripcion.setText(registreseV.descripcionRv)
-                //binding.contacto.setText(registreseV.contactoRv)
 
+    private fun updateUser(nomb: String, des: String, cont: String ){
+        progressbar.setMessage("Actualizando. Espere por favor")
+        progressbar.show()
+
+        val userMap = HashMap<String ,Any>()
+
+        userMap["nombre"] = nomb
+        userMap["descripcion"] = des
+        userMap["contacto"] = cont
+
+        dbDatabase.setValue(userMap).addOnCompleteListener( OnCompleteListener { task ->
+            if(task.isSuccessful){
+                val Intent = Intent(applicationContext, PerfilVendedor::class.java)
+                startActivity(Intent)
+                finish()
+                progressbar.dismiss()
             }
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
 
-
-        })
         }
-
-
-private fun cerrarSesion(){
-    auth.signOut()
-    val intent = Intent(this, MainActivity::class.java)
-    startActivity(
-        intent
-    )
-
-}
-
-    override fun onStart() {
-        super.onStart()
-
-    val currentUser = auth.currentUser
-    if(currentUser != null){
-        reload()
-    }else{
-
-    }
+        )
 
     }
 
 
-    private fun reload(){
 
-    }
+
+
+
+
+
 
 }
 

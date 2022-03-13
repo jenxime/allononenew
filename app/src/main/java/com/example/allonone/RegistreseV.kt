@@ -30,7 +30,7 @@ class RegistreseV : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrese_v)
 
-        emailRv = findViewById(R.id.emailRi)
+        emailRv = findViewById(R.id.emailRv)
         passwordRv = findViewById(R.id.passwordRv)
         nameRv = findViewById(R.id.nameRv)
         descripcionRv = findViewById(R.id.descripcionRv)

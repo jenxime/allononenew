@@ -33,7 +33,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailRi"
+        android:id="@+id/emailRv"
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:layout_marginLeft="40dp"
