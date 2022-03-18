@@ -58,16 +58,6 @@ class Ingresar : AppCompatActivity() {
         if(!TextUtils.isEmpty(emailI) && !TextUtils.isEmpty(passwordI)){
             progressBarI.visibility=View.VISIBLE
 
-            val type = mDatabase.child("User").child("typeUser").get()
-
-            if(type.equals("Cliente")){
-                Toast.makeText(this, "Registro correcto", Toast.LENGTH_SHORT).show()
-                finish()
-                action()
-            }else{
-                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show()
-            }
-/*
             auth.signInWithEmailAndPassword(emailI,passwordI)
                 .addOnCompleteListener(this){
                     task ->
@@ -78,7 +68,7 @@ class Ingresar : AppCompatActivity() {
                     }else{
                         Toast.makeText(this, "Ingreso Incorrecto", Toast.LENGTH_SHORT).show()
                     }
-                }*/
+                }
         }
     }
 

@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract
 import android.text.TextUtils
 import android.widget.Button
 import com.example.allonone.databinding.ActivityPerfilVendedorBinding
@@ -13,7 +14,9 @@ import com.google.firebase.database.*
 import android.widget.EditText
 import android.widget.ImageView
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.database.core.Constants
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_perfil_vendedor.*
 
 
 class PerfilVendedor : AppCompatActivity() {
@@ -21,11 +24,11 @@ class PerfilVendedor : AppCompatActivity() {
     private lateinit var nombre : EditText
     private lateinit var descripcion: EditText
     private lateinit var contacto : EditText
-    private lateinit var foto : ImageView
     private lateinit var actualizar : Button
     private lateinit var dbDatabase: DatabaseReference
     private lateinit var auth : FirebaseAuth
     private lateinit var progressbar: ProgressDialog
+    private lateinit var rootnone: FirebaseDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +38,6 @@ class PerfilVendedor : AppCompatActivity() {
         nombre = findViewById(R.id.nameP)
         descripcion = findViewById(R.id.descripcionP)
         contacto = findViewById(R.id.contactoP)
-        foto = findViewById(R.id.img)
         actualizar = findViewById(R.id.btnUpdate)
         progressbar = ProgressDialog(this)
 
@@ -90,13 +92,6 @@ class PerfilVendedor : AppCompatActivity() {
         )
 
     }
-
-
-
-
-
-
-
 
 
 }

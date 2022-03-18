@@ -34,8 +34,6 @@ class IngresarV : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
         mDatabase= FirebaseDatabase.getInstance().reference
 
-
-
     }
 
     fun btnRegistrarseV(view: View){

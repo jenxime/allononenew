@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllOnOne">
         <activity
+            android:name=".ProfileUser"
+            android:exported="false" />
+        <activity
             android:name=".PerfilVendedor"
             android:exported="false" />
         <activity

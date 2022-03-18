@@ -22,10 +22,10 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/bungee"
-        android:text="Ingresar"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
         android:textSize="48sp"
+        android:text="Ingresar"
         />
 
     <TextView

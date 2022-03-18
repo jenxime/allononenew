@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PerfilVendedor">
+    tools:context=".ProfileUser">
 
 
     <EditText
-        android:id="@+id/nameP"
+        android:id="@+id/namePu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -18,25 +18,7 @@
         android:text="Name" />
 
     <EditText
-        android:id="@+id/descripcionP"
-        android:layout_width="337dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="45dp"
-        android:textSize="36dp"
-        android:text="Descripcion" />
-
-    <EditText
-        android:id="@+id/contactoP"
-        android:layout_width="337dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="45dp"
-        android:textSize="36dp"
-        android:text="Contacto" />
-
-    <EditText
-        android:id="@+id/emailP"
+        android:id="@+id/emailPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -45,7 +27,7 @@
         android:text="Email" />
 
     <EditText
-        android:id="@+id/passwordP"
+        android:id="@+id/passwordPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
