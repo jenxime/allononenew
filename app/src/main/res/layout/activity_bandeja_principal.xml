@@ -9,21 +9,21 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
+        android:layout_width="305dp"
+        android:layout_height="84dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/bungee"
         android:text="Menu"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
-        android:textSize="48sp"
-         />
+        android:textSize="48sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="361dp"
-        android:layout_height="258dp"
-        android:layout_marginTop="36dp"
-         />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
 </LinearLayout>

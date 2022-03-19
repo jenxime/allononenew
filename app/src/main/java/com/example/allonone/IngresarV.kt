@@ -70,7 +70,7 @@ class IngresarV : AppCompatActivity() {
     }
 
     private fun action(){
-        startActivity(Intent(this,PerfilVendedor::class.java))
+        startActivity(Intent(this,BandejaV::class.java))
     }
 
 

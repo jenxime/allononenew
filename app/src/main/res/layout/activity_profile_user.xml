@@ -15,7 +15,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
         android:textSize="36dp"
-        android:text="Name" />
+         />
 
     <EditText
         android:id="@+id/emailPu"
@@ -24,7 +24,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
         android:textSize="36dp"
-        android:text="Email" />
+        />
 
     <EditText
         android:id="@+id/passwordPu"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
         android:textSize="36dp"
-        android:text="Password" />
+        />
 
     <Button
         android:id="@+id/btnUpdate"
@@ -42,6 +42,16 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         android:text="Update" />
+
+    <Button
+        android:layout_width="228dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="Atras"
+        android:text="Atras"
+        android:textColor="@android:color/darker_gray" />
 
 
 </LinearLayout>

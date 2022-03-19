@@ -35,9 +35,8 @@
     <EditText
         android:id="@+id/emailRv"
         android:layout_width="330dp"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -54,7 +53,7 @@
     <EditText
         android:id="@+id/passwordRv"
         android:layout_width="330dp"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:ems="10"
         android:inputType="textPassword" />
@@ -73,9 +72,8 @@
     <EditText
         android:id="@+id/nameRv"
         android:layout_width="330dp"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -92,9 +90,8 @@
     <EditText
         android:id="@+id/descripcionRv"
         android:layout_width="330dp"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
@@ -113,7 +110,7 @@
     <EditText
         android:id="@+id/contactoRv"
         android:layout_width="330dp"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:ems="10"
         android:gravity="start|top"
@@ -124,16 +121,16 @@
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="SIGNUP" />
 
     <Button
-        android:onClick="btnIngresarV"
         android:layout_width="wrap_content"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="67dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="btnIngresarV"
         android:text="Si tienes cuenta ingresa ya"
         android:textColor="@android:color/darker_gray" />
 

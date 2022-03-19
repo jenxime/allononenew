@@ -5,38 +5,41 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 
-class bandejaPrincipal : AppCompatActivity() {
+class BandejaV : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bandeja_principal)
+        setContentView(R.layout.activity_bandeja_v)
     }
 
-    //menu option
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.overflow, menu)
+        menuInflater.inflate(R.menu.menu_bandeja, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var selectedOption = ""
         when(item?.itemId){
-            R.id.profile -> profileUser()
+            R.id.perfilV -> profileV()
+            R.id.addP -> addProducts()
             R.id.logout -> logout()
 
         }
-        Toast.makeText(this,"Option : " + selectedOption, Toast.LENGTH_SHORT).show()
 
         return super.onOptionsItemSelected(item)
     }
 
-    private fun profileUser(){
-        startActivity(Intent(this,ProfileUser::class.java))
+    private fun profileV(){
+        startActivity(Intent(this,PerfilVendedor::class.java))
+    }
+
+    private fun addProducts(){
+        startActivity(Intent(this,AddV::class.java))
     }
 
     private fun logout(){
         startActivity(Intent(this,MainActivity::class.java))
         finish()
     }
-}
+
+
+    }

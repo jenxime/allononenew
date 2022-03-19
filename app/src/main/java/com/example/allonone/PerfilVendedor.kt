@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.SyncStateContract
 import android.text.TextUtils
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import com.example.allonone.databinding.ActivityPerfilVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -91,6 +93,25 @@ class PerfilVendedor : AppCompatActivity() {
         }
         )
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.atras, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var selectedOption = ""
+        when(item?.itemId){
+            R.id.back -> bandejaP()
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun bandejaP(){
+        startActivity(Intent(this,BandejaV::class.java))
     }
 
 
