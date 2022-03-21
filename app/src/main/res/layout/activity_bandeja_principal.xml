@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".bandejaPrincipal">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".bandejaPrincipal">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="305dp"
         android:layout_height="84dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/bungee"
         android:text="Menu"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
         android:textSize="48sp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
+</layout>

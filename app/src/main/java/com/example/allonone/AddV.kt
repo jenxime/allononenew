@@ -7,10 +7,14 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_add_v.*
@@ -20,9 +24,11 @@ class AddV : AppCompatActivity() {
 
     private lateinit var filepath: Uri
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_v)
+
 
         btnChoose.setOnClickListener{
             startFileChoose()
@@ -32,6 +38,8 @@ class AddV : AppCompatActivity() {
             uploadFile()
         }
     }
+
+
 
     private fun uploadFile(){
         if(filepath != null){

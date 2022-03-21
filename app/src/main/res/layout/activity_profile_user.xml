@@ -1,57 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileUser">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ProfileUser">
+    >
 
 
-    <EditText
+    <TextView
         android:id="@+id/namePu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
-        android:textSize="36dp"
+        android:textSize="20dp"
          />
 
-    <EditText
+    <TextView
         android:id="@+id/emailPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
-        android:textSize="36dp"
+        android:textSize="20dp"
         />
 
-    <EditText
+    <TextView
         android:id="@+id/passwordPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
-        android:textSize="36dp"
+        android:textSize="20dp"
         />
 
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="279dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
-        android:text="Update" />
-
-    <Button
-        android:layout_width="228dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="Atras"
-        android:text="Atras"
-        android:textColor="@android:color/darker_gray" />
 
 
 </LinearLayout>
+</layout>

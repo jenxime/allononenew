@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegistreseV">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistreseV">
+  >
 
     <TextView
         android:id="@+id/textView15"
@@ -33,7 +36,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailRv"
+        android:id="@+id/txtemailRv"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -117,7 +120,7 @@
         android:inputType="textMultiLine" />
 
     <Button
-        android:onClick="registrarV"
+        android:id="@+id/registrarV"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -136,3 +139,4 @@
 
 
 </LinearLayout>
+</layout>

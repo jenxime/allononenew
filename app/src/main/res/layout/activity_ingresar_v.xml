@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    tools:context=".IngresarV">
+
+<LinearLayout
+android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".IngresarV">
+    >
 
     <ProgressBar
         android:id="@+id/progressBarIv"
@@ -38,14 +41,13 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailIv"
-        android:layout_width="337dp"
+        android:id="@+id/txtEmailIv"
+        android:layout_width="321dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView17"
@@ -58,46 +60,43 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/passwordIv"
-        android:inputType="textPassword"
+        android:id="@+id/txtPasswordIv"
         android:layout_width="336dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        />
+        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnIngresarI"
         android:layout_width="289dp"
         android:layout_height="63dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
-        android:onClick="btnIngresarV"
         android:text="Login" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/textviewRecuperarP"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
-        android:onClick="btnRecuperarV"
         android:text="Recuperar Password"
         android:textColor="@android:color/darker_gray"
 
         />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/textviewRegistrar"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
-        android:onClick="btnRegistrarseV"
         android:text="Registrese"
         android:textColor="@android:color/darker_gray" />
 
 </LinearLayout>
+</layout>

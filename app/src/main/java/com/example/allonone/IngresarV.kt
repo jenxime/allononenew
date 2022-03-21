@@ -8,70 +8,81 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.allonone.databinding.ActivityIngresarBinding
+import com.example.allonone.databinding.ActivityIngresarVBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_registrese_v.*
 import javax.crypto.spec.IvParameterSpec
 
 class IngresarV : AppCompatActivity() {
 
-    private lateinit var emailIv: EditText
-    private lateinit var passwordIv: EditText
-    private lateinit var progressBarIv: ProgressBar
-
-    private lateinit var mDatabase : DatabaseReference
-
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityIngresarVBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingresar_v)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_ingresar_v)
 
-        emailIv=findViewById(R.id.emailIv)
-        passwordIv=findViewById(R.id.passwordIv)
-        progressBarIv=findViewById(R.id.progressBarIv)
-        auth= FirebaseAuth.getInstance()
-        mDatabase= FirebaseDatabase.getInstance().reference
+        binding.textviewRegistrar.setOnClickListener {
+            val intentRegistro = Intent(this, RegistreseV::class.java)
+            startActivity(intentRegistro)
+        }
 
-    }
+        binding.textviewRecuperarP.setOnClickListener {
+            val intentRecoveryPassword = Intent(this, RecuperacionV::class.java)
+            startActivity(intentRecoveryPassword)
+        }
 
-    fun btnRegistrarseV(view: View){
-        startActivity(Intent(this,RegistreseV::class.java))
-    }
+        auth = Firebase.auth
 
-    fun btnRecuperarV(view: View){
-        startActivity(Intent(this,RecuperacionV::class.java))
-    }
+        binding.btnIngresarI.setOnClickListener{
+            singIn(
+                binding.txtEmailIv.text.toString(),
+                binding.txtPasswordIv.text.toString()
 
-    fun btnIngresarV(view: View){
-        ingresar()
-    }
-
-    private fun ingresar(){
-        val emailIv:String=emailIv.text.toString()
-        val passwordIv:String=passwordIv.text.toString()
-
-        if(!TextUtils.isEmpty(emailIv) && !TextUtils.isEmpty(passwordIv)){
-            progressBarIv.visibility= View.VISIBLE
-
-            auth.signInWithEmailAndPassword(emailIv,passwordIv)
-                .addOnCompleteListener(this){
-                    task ->
-                    if(task.isSuccessful){
-                        Toast.makeText(this, "Ingreso correcto", Toast.LENGTH_SHORT).show()
-                        finish()
-                        action()
-                    }else{
-                        Toast.makeText(this, "Ingreso Incorrecto", Toast.LENGTH_SHORT).show()
-                    }
-                }
+            )
         }
     }
 
-    private fun action(){
-        startActivity(Intent(this,BandejaV::class.java))
+    override fun onStart(){
+        super.onStart()
+
+        val currentUser = auth.currentUser
+
+        checkUserAlreadyLoggedIn(currentUser)
+
     }
 
+    private fun singIn(email: String, password: String){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if(task.isSuccessful){
+                    Toast.makeText(this,"Session iniciada", Toast.LENGTH_SHORT).show()
+                    infoUser()
+                }else{
+                    Toast.makeText(baseContext, "Datos Incorrectos", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun infoUser(){
+        val infoUserIntent = Intent(this, bandejaPrincipal::class.java)
+        startActivity(infoUserIntent)
+        this.finish()
+    }
+
+    private fun checkUserAlreadyLoggedIn(currentUser: FirebaseUser?){
+        if(currentUser != null){
+
+        }
+
+    }
 
 }

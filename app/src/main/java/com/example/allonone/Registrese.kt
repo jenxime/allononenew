@@ -1,107 +1,102 @@
 package com.example.allonone
 
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.allonone.databinding.ActivityRegistreseBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class Registrese : AppCompatActivity() {
 
-    private lateinit var txtEmailr: EditText
-    private lateinit var txtPasswordr: EditText
-    private lateinit var txtNamer: EditText
-    private lateinit var progressBar: ProgressBar
-    private lateinit var dbReference: DatabaseReference
-    private lateinit var database: FirebaseDatabase
+    private lateinit var binding: ActivityRegistreseBinding
     private lateinit var auth: FirebaseAuth
 
-
-
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registrese)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_registrese)
 
+        binding.registrarBtn.setOnClickListener {
+            val email = binding.txtEmailr.text.toString()
+            val password = binding.txtPasswordr.text.toString()
+            val name = binding.txtNamer.text.toString()
 
-        //cambiar de ventana
-        /* btnIngrese.setOnClickListener {
-            val intent: Intent = Intent(this, Ingresar::class.java)
-            startActivity(intent)
-            finish()
-        }*/
-
-        //logica de firebase
-        txtEmailr = findViewById(R.id.txtEmailr)
-        txtPasswordr = findViewById(R.id.txtPasswordr)
-        txtNamer = findViewById(R.id.txtNamer)
-
-
-        progressBar = ProgressBar(this)
-        database = FirebaseDatabase.getInstance()
-        //auth = FirebaseAuth.getInstance()
-        auth = Firebase.auth
-
-        dbReference = database.reference.child("User")
-
+            if(email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()){
+                registrar(
+                    email,
+                    password,
+                    name
+                )
+            }else{
+                Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show()
+            }
+        }
+        auth=Firebase.auth
     }
 
-    fun registrar(view: View) {
-        createNewAccount()
+    override fun onStart(){
+        super.onStart()
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            reload()
+        }else{
 
-    }
-
-    private fun createNewAccount() {
-
-        val email: String = txtEmailr.text.toString()
-        val password: String = txtPasswordr.text.toString()
-        val name: String = txtNamer.text.toString()
-
-
-        if (txtEmailr.text.isNotEmpty() && txtPasswordr.text.isNotEmpty() && txtNamer.text.isNotEmpty() ) {
-            progressBar.visibility = View.VISIBLE
-            FirebaseAuth.getInstance()
-                .createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(this, "Registro correcto", Toast.LENGTH_SHORT).show()
-                        finish()
-                        val user: FirebaseUser? = auth.currentUser
-                        verifyEmail(user)
-
-                        val userBD = dbReference.child(user?.uid.toString())
-
-                        userBD.child("Email").setValue(txtEmailr.text.toString())
-                        userBD.child("password").setValue(password)
-                        userBD.child("name").setValue(name)
-
-                        action()
-                    } else {
-                        Toast.makeText(this, "Registro Incorrecto", Toast.LENGTH_SHORT).show()
-                    }
-
-                }
         }
     }
 
-    private fun action() {
-        startActivity(Intent(this, Ingresar::class.java))
-        //finish()
+    private fun registrar(email:String, password:String, name:String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this){ task ->
+                if(task.isSuccessful){
+                    val user = auth.currentUser
+                    val uid = user!!.uid
+                    val map = hashMapOf(
+                        "email" to email,
+                        "password" to password,
+                        "name" to name
+                    )
 
+                    val db = Firebase.firestore
+
+                    db.collection("User").document(uid).set(map).addOnSuccessListener{
+                        infoUser()
+                       //val user: FirebaseUser? = auth.currentUser
+                        //verifyEmail(user)
+                        Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show()
+                    }
+                        .addOnFailureListener{
+                            Toast.makeText(this, "Fallo el registro", Toast.LENGTH_SHORT).show()
+                        }
+                }else{
+                    Toast.makeText(this,"Authentication Failed", Toast.LENGTH_SHORT).show()
+                }
+
+            }
 
     }
 
+    private fun infoUser() {
+        val infoUserIntent = Intent(this, ProfileUser::class.java)
+        startActivity(infoUserIntent)
+
+    }
+
+    private fun reload(){
+
+    }
+
+
     private fun verifyEmail(user: FirebaseUser?) {
-        user?.sendEmailVerification()
+       user?.sendEmailVerification()
             ?.addOnCompleteListener(this) { task ->
 
                 if (task.isComplete) {
@@ -112,4 +107,7 @@ class Registrese : AppCompatActivity() {
             }
 
     }
+
+
+
 }

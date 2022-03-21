@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllOnOne">
         <activity
+            android:name=".Main"
+            android:exported="false" />
+        <activity
+            android:name=".Gallery"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".AddV"
             android:exported="false" />
         <activity
@@ -52,5 +61,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

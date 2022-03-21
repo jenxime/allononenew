@@ -6,12 +6,54 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.allonone.databinding.ActivityBandejaPrincipalBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+
 
 class bandejaPrincipal : AppCompatActivity() {
+
+    private lateinit var binding: ActivityBandejaPrincipalBinding
+
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bandeja_principal)
+        binding = ActivityBandejaPrincipalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        auth = Firebase.auth
+
+        binding.mainRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@bandejaPrincipal)
+
+        }
+        fetchData()
+
+
     }
+
+    private fun fetchData(){
+        FirebaseFirestore.getInstance().collection("posts")
+            .get()
+            .addOnSuccessListener { documents ->
+                for(document in documents){
+                    val user = documents.toObjects(UserModel::class.java)
+                    binding.mainRecyclerView.adapter = UserAdapter(this, user)
+
+                }
+            }
+            .addOnFailureListener{
+            showToast("An error ocurred: ${it.localizedMessage}")
+            }
+    }
+
+
+
+
 
     //menu option
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -36,7 +78,8 @@ class bandejaPrincipal : AppCompatActivity() {
     }
 
     private fun logout(){
-        startActivity(Intent(this,MainActivity::class.java))
-        finish()
+        auth.signOut()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

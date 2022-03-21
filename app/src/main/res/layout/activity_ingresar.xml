@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Ingresar">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     android:foregroundTint="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".Ingresar">
+    >
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="329dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/bungee"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
@@ -35,7 +38,7 @@
 
     <EditText
         android:id="@+id/txtEmailI"
-        android:layout_width="337dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
@@ -45,7 +48,7 @@
 
     <TextView
         android:layout_width="116dp"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="35dp"
         android:text="Password:"
@@ -54,7 +57,7 @@
 
     <EditText
         android:id="@+id/txtPasswordI"
-        android:layout_width="337dp"
+        android:layout_width="309dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
@@ -63,7 +66,7 @@
         android:textColor="@android:color/darker_gray" />
 
     <Button
-        android:onClick="btnIngresarI"
+        android:id="@+id/btnIngresarI"
         android:layout_width="289dp"
         android:layout_height="63dp"
         android:layout_marginLeft="60dp"
@@ -71,26 +74,30 @@
         android:text="Login"
          />
 
-    <Button
-        android:layout_width="228dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="90dp"
+    <TextView
+        android:id="@+id/textviewRegistrar"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="btnRecuperarI"
-        android:text="Recuperar Password"
-        android:textColor="@android:color/darker_gray" />
-
-    <Button
-        android:onClick="btnRegistrarseI"
-        android:layout_width="167dp"
-        android:layout_height="43dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Registrese"
+        android:textAlignment="center"
         android:textColor="@android:color/darker_gray"
-         />
+        android:textSize="20sp"
+        android:text="Registrate"
+        />
+
+    <TextView
+        android:id="@+id/textviewRecuperarP"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp"
+        android:text="Recuperar Contraseña"
+        />
+
 
     <ProgressBar
         android:id="@+id/progressBarI"
@@ -101,3 +108,5 @@
         android:indeterminate="true"
         />
 </LinearLayout>
+
+</layout>

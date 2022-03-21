@@ -9,55 +9,38 @@ import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.databinding.DataBindingUtil
+import com.example.allonone.databinding.ActivityProfileUserBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_profile_user.*
 
 
 class ProfileUser : AppCompatActivity() {
 
-    private lateinit var nombre: EditText;
-    private lateinit var email: EditText;
-    private lateinit var password: EditText;
-    private lateinit var auth: FirebaseAuth;
-    private lateinit var fstore: FirebaseStorage;
-    private lateinit var userId: String;
-    private lateinit var dbDatabase: DatabaseReference
-
+    private lateinit var binding: ActivityProfileUserBinding
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile_user)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile_user)
 
+        auth = Firebase.auth
 
-        nombre = findViewById(R.id.namePu)
-        email = findViewById(R.id.emailPu)
-        password = findViewById(R.id.passwordPu)
+        val currentUser = auth.currentUser
+        val uid = currentUser!!.uid
+        val db = Firebase.firestore
 
-        auth = FirebaseAuth.getInstance();
-        fstore = FirebaseStorage.getInstance();
-
-        userId = auth.currentUser?.uid!!
-
-        dbDatabase = FirebaseDatabase.getInstance().getReference("User").child(userId)
-
-
-        dbDatabase.child("User").child(userId).addValueEventListener(object: ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot){
-                if(snapshot.exists()) {
-                    val nombre1 = "${snapshot.child("name").value}"
-
-                    nombre.setText(nombre1)
-
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+        db.collection("User").document(uid).get().addOnSuccessListener {
+            binding.emailPu.text = (it.get("email") as String?)
+            binding.passwordPu.text = (it.get("password") as String?)
+            binding.namePu.text = (it.get("name") as String?)
+        }
 
 
     }
@@ -68,7 +51,6 @@ class ProfileUser : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var selectedOption = ""
         when(item?.itemId){
             R.id.back -> bandejaP()
 
@@ -80,5 +62,23 @@ class ProfileUser : AppCompatActivity() {
     private fun bandejaP(){
         startActivity(Intent(this,bandejaPrincipal::class.java))
     }
+
+
+
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            reload()
+        }else{
+
+        }
+    }
+
+    private fun reload(){
+
+    }
+
 
     }

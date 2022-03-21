@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecuperacionV">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RecuperacionV">
+    >
 
     <TextView
         android:id="@+id/textView1"
@@ -39,7 +42,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailRi"
+        android:id="@+id/emailRv"
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:layout_marginLeft="40dp"
@@ -48,7 +51,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:onClick="recuperarV"
+        android:id="@+id/recuperarV"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -68,3 +71,4 @@
 
 
 </LinearLayout>
+</layout>

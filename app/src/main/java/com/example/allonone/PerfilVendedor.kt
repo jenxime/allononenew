@@ -10,7 +10,6 @@ import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import com.example.allonone.databinding.ActivityPerfilVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import android.widget.EditText

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/btnUpImg"
+        android:layout_width="224dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="119dp"
+        android:text="Image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="93dp" />
+
+    <TextView
+        android:id="@+id/txSelectedFile"
+        android:layout_width="345dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="60dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpImg"
+        tools:layout_editor_absoluteX="33dp" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="224dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="139dp"
+        android:text="upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txSelectedFile" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lsV"
+        android:layout_width="333dp"
+        android:layout_height="288dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+</androidx.constraintlayout.widget.ConstraintLayout>
