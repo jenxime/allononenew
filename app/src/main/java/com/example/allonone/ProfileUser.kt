@@ -39,7 +39,9 @@ class ProfileUser : AppCompatActivity() {
         db.collection("User").document(uid).get().addOnSuccessListener {
             binding.emailPu.text = (it.get("email") as String?)
             binding.passwordPu.text = (it.get("password") as String?)
-            binding.namePu.text = (it.get("name") as String?)
+            binding.namePu.text = (it.get("name") as String? )
+
+
         }
 
 

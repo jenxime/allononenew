@@ -18,10 +18,9 @@ class UserAdapter(private val context: Context,  private val posts: List<UserMod
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):UserViewHolder{
         return UserViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_layout, parent, false )
+                .inflate(R.layout.list_item, parent, false )
         )
     }
-
     override fun onBindViewHolder(holder: UserViewHolder, position: Int){
         val user = posts[position]
 
@@ -35,7 +34,7 @@ class UserAdapter(private val context: Context,  private val posts: List<UserMod
 
 
 class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    val imageUrl: ImageView = itemView.findViewById(R.id.imageView_user)
+    val imageUrl: ImageView = itemView.findViewById(R.id.ivImage)
 
 }
 

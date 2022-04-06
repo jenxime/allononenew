@@ -10,33 +10,65 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/bungee"
+        android:text="Nombre:"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/namePu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/breadley"
+        android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
-        android:textSize="20dp"
-         />
+        android:fontFamily="@font/bungee"
+        android:text="Email:"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/emailPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/breadley"
+        android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="45dp"
-        android:textSize="20dp"
-        />
+        android:fontFamily="@font/bungee"
+        android:text="Password:"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/passwordPu"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="45dp"
-        android:textSize="20dp"
-        />
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/breadley"
+        android:textSize="30dp" />
+
 
 
 

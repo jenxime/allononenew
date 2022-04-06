@@ -34,7 +34,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/breadley"
         android:text="Cliente"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnVendedor"
@@ -44,6 +44,6 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/breadley"
         android:text="Vendedor"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
 </LinearLayout>

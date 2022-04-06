@@ -73,7 +73,7 @@ class IngresarV : AppCompatActivity() {
     }
 
     private fun infoUser(){
-        val infoUserIntent = Intent(this, bandejaPrincipal::class.java)
+        val infoUserIntent = Intent(this, BandejaV::class.java)
         startActivity(infoUserIntent)
         this.finish()
     }

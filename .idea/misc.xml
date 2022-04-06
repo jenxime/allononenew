@@ -7,8 +7,8 @@
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_add_v.xml" value="0.20989583333333334" />
-        <entry key="app/src/main/res/layout/activity_bandeja_principal.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_add_v.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_bandeja_principal.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_bandeja_v.xml" value="0.2107453737577769" />
         <entry key="app/src/main/res/layout/activity_bandeja_v1.xml" value="0.18181818181818182" />
         <entry key="app/src/main/res/layout/activity_gallery.xml" value="0.25" />
@@ -18,16 +18,17 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.14583333333333334" />
-        <entry key="app/src/main/res/layout/activity_perfil_vendedor.xml" value="0.19909502262443438" />
-        <entry key="app/src/main/res/layout/activity_profile_user.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/activity_perfil_vendedor.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_profile_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_recuperacion.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_recuperacion_v.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_registrese.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_registrese_v.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_registrese_v.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.11865942028985507" />
         <entry key="app/src/main/res/layout/data_rows.xml" value="0.14583333333333334" />
-        <entry key="app/src/main/res/layout/item_layout.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/item_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_layout1.xml" value="0.14447463768115942" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/atras.xml" value="0.234375" />
         <entry key="app/src/main/res/menu/menu_bandeja.xml" value="0.234375" />
         <entry key="app/src/main/res/menu/menu_bandeja_principal.xml" value="0.234375" />

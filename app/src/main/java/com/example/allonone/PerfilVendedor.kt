@@ -14,83 +14,58 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
+import com.example.allonone.databinding.ActivityPerfilVendedorBinding
+import com.example.allonone.databinding.ActivityProfileUserBinding
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.core.Constants
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_perfil_vendedor.*
 
 
 class PerfilVendedor : AppCompatActivity() {
 
-    private lateinit var nombre : EditText
-    private lateinit var descripcion: EditText
-    private lateinit var contacto : EditText
-    private lateinit var actualizar : Button
-    private lateinit var dbDatabase: DatabaseReference
-    private lateinit var auth : FirebaseAuth
-    private lateinit var progressbar: ProgressDialog
-    private lateinit var rootnone: FirebaseDatabase
+    private lateinit var binding: ActivityPerfilVendedorBinding
+    lateinit var auth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_perfil_vendedor)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_perfil_vendedor)
 
-        nombre = findViewById(R.id.nameP)
-        descripcion = findViewById(R.id.descripcionP)
-        contacto = findViewById(R.id.contactoP)
-        actualizar = findViewById(R.id.btnUpdate)
-        progressbar = ProgressDialog(this)
+        auth = Firebase.auth
 
-        auth = FirebaseAuth.getInstance()
-        val uid = auth.currentUser?.uid!!
+        val currentUser = auth.currentUser
+        val uid = currentUser!!.uid
+        val db = Firebase.firestore
 
-        dbDatabase = FirebaseDatabase.getInstance().getReference("Seller").child(uid)
+        db.collection("Seller").document(uid).get().addOnSuccessListener {
+            binding.nameP .text = (it.get("name") as String?)
+            binding.descripcionP.text = (it.get("descripcion") as String?)
+            binding.contactoP.text = (it.get("contacto") as String? )
+            binding.emailP.text = (it.get("email") as String? )
+            binding.passwordP.text = (it.get("password") as String? )
 
-        actualizar.setOnClickListener {
-            val nomb = nombre.text.toString().trim()
-            val des = descripcion.text.toString().trim()
-            val cont = contacto.text.toString().trim()
-
-            if(TextUtils.isEmpty(nomb)){
-                nombre.error = "Enter name"
-                return@setOnClickListener
-            }
-            if(TextUtils.isEmpty(des)){
-                descripcion.error = "Enter descripcion"
-                return@setOnClickListener
-            }
-            if(TextUtils.isEmpty(cont)){
-                contacto.error = "Enter contacto"
-                return@setOnClickListener
-            }
-
-            updateUser(nomb, des, cont)
 
         }
 
     }
 
-    private fun updateUser(nomb: String, des: String, cont: String ){
-        progressbar.setMessage("Actualizando. Espere por favor")
-        progressbar.show()
+    override fun onStart() {
+        super.onStart()
 
-        val userMap = HashMap<String ,Any>()
-
-        userMap["nombre"] = nomb
-        userMap["descripcion"] = des
-        userMap["contacto"] = cont
-
-        dbDatabase.setValue(userMap).addOnCompleteListener( OnCompleteListener { task ->
-            if(task.isSuccessful){
-                val Intent = Intent(applicationContext, PerfilVendedor::class.java)
-                startActivity(Intent)
-                finish()
-                progressbar.dismiss()
-            }
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            reload()
+        }else{
 
         }
-        )
+    }
+
+    private fun reload(){
 
     }
 

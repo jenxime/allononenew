@@ -10,22 +10,15 @@ android:layout_width="match_parent"
     android:orientation="vertical"
     >
 
-    <ProgressBar
-        android:id="@+id/progressBarIv"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="358dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="330dp"
-        android:layout_height="89dp"
+        android:layout_width="349dp"
+        android:layout_height="142dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/bungee"
-        android:text="Ingresar"
+        android:text="Bienvenido Vendedor"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
         android:textSize="48sp" />
@@ -36,6 +29,7 @@ android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/bungee"
         android:text="Email:"
         android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
@@ -47,26 +41,31 @@ android:layout_width="match_parent"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:fontFamily="@font/breadley"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
+        android:layout_width="138dp"
+        android:layout_height="39dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/bungee"
         android:text="Password:"
         android:textColor="@color/colorOnSecondary"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtPasswordIv"
-        android:layout_width="336dp"
+        android:layout_width="318dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:fontFamily="@font/breadley"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnIngresarI"
@@ -74,7 +73,8 @@ android:layout_width="match_parent"
         android:layout_height="63dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
-        android:text="Login" />
+        android:text="Login"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/textviewRecuperarP"
@@ -85,8 +85,7 @@ android:layout_width="match_parent"
         android:backgroundTint="#FFFFFF"
         android:text="Recuperar Password"
         android:textColor="@android:color/darker_gray"
-
-        />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/textviewRegistrar"
@@ -96,7 +95,8 @@ android:layout_width="match_parent"
         android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
         android:text="Registrese"
-        android:textColor="@android:color/darker_gray" />
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
 
 </LinearLayout>
 </layout>

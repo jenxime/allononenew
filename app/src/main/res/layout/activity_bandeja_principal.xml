@@ -11,15 +11,14 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="305dp"
-        android:layout_height="84dp"
+        android:layout_width="318dp"
+        android:layout_height="91dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/bungee"
         android:text="Menu"
         android:textAlignment="center"
         android:textColor="@color/colorOnSecondary"
-        android:textSize="48sp" />
+        android:textSize="45dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_recyclerView"

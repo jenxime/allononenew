@@ -16,8 +16,6 @@ import com.google.firebase.firestore.core.View
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
-import kotlinx.android.synthetic.main.activity_add_v.*
-import kotlinx.android.synthetic.main.activity_add_v.btnUpImg
 import kotlinx.android.synthetic.main.activity_main2.*
 import java.text.SimpleDateFormat
 import java.util.*

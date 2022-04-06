@@ -85,7 +85,7 @@ class Registrese : AppCompatActivity() {
     }
 
     private fun infoUser() {
-        val infoUserIntent = Intent(this, ProfileUser::class.java)
+        val infoUserIntent = Intent(this, Ingresar::class.java)
         startActivity(infoUserIntent)
 
     }

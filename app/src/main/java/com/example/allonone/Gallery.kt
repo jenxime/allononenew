@@ -6,12 +6,18 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -28,6 +34,9 @@ class Gallery : AppCompatActivity() {
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
 
+    lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gallery)
@@ -37,6 +46,9 @@ class Gallery : AppCompatActivity() {
 
         btn_choose_image.setOnClickListener { launchGallery() }
         btn_upload_image.setOnClickListener { uploadImage() }
+
+        auth = Firebase.auth
+
 
     }
 
@@ -73,7 +85,10 @@ class Gallery : AppCompatActivity() {
         val data = HashMap<String, Any>()
         data["imageUrl"] = uri
 
-        db.collection("posts")
+
+
+
+        db.collection("Seller/")
             .add(data)
             .addOnSuccessListener { documentReference ->
                 Toast.makeText(this, "Saved to DB", Toast.LENGTH_LONG).show()
@@ -82,6 +97,7 @@ class Gallery : AppCompatActivity() {
                 Toast.makeText(this, "Error saving to DB", Toast.LENGTH_LONG).show()
             }
     }
+
 
     private fun uploadImage(){
         if(filePath != null){
@@ -109,8 +125,31 @@ class Gallery : AppCompatActivity() {
             Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
         }
         }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.atras, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.back -> bandejaP()
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun bandejaP(){
+        startActivity(Intent(this,BandejaV::class.java))
+    }
+
+
+
 }
 
 private fun Unit.setImageBitmap(bitmap: Bitmap?) {
 
 }
+
+

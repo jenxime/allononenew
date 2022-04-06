@@ -81,11 +81,11 @@ class RegistreseV : AppCompatActivity() {
 
                     val db = Firebase.firestore
 
-                    db.collection("User").document(uid).set(map).addOnSuccessListener{
+                    db.collection("Seller").document(uid).set(map).addOnSuccessListener{
                         infoUser()
                         //val user: FirebaseUser? = auth.currentUser
                         //verifyEmail(user)
-                        Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Vendedor Registrado", Toast.LENGTH_SHORT).show()
                     }
                         .addOnFailureListener{
                             Toast.makeText(this, "Fallo el registro", Toast.LENGTH_SHORT).show()
@@ -99,7 +99,7 @@ class RegistreseV : AppCompatActivity() {
     }
 
     private fun infoUser() {
-        val infoUserIntent = Intent(this, PerfilVendedor::class.java)
+        val infoUserIntent = Intent(this, IngresarV::class.java)
         startActivity(infoUserIntent)
 
     }
